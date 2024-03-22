@@ -1,0 +1,7 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+git_dir=$(git rev-parse --git-dir)
+export HUSKY_GIT_PARAMS="$git_dir/COMMIT_EDITMSG"
+
+npx git-cz --hook || true
