@@ -10,7 +10,6 @@
     "commit": "git-cz",
     "lint": "next lint",
     "lint:fix": "next lint --fix",
-    "lint:strict": "next lint '*/**/*.{js,jsx,ts,tsx}'",
     "prettier": "prettier --write */**/*.{js,jsx,json,ts,tsx,scss,css,md}"
   },
   "lint-staged": {
