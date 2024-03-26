@@ -1,4 +1,13 @@
 "use client";
+
+import { useParams, useRouter } from "next/navigation";
+
+import { useState } from "react";
+import { SubmitHandler, useFieldArray, useForm } from "react-hook-form";
+
+import { zodResolver } from "@hookform/resolvers/zod";
+import { AlertTriangleIcon, Trash, Trash2Icon } from "lucide-react";
+
 import {
   Accordion,
   AccordionContent,
@@ -24,13 +33,8 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Separator } from "@/components/ui/separator";
-import { profileSchema, type ProfileFormValues } from "@/lib/form-schema";
+import { type ProfileFormValues, profileSchema } from "@/lib/form-schema";
 import { cn } from "@/lib/utils";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { AlertTriangleIcon, Trash, Trash2Icon } from "lucide-react";
-import { useParams, useRouter } from "next/navigation";
-import { useState } from "react";
-import { SubmitHandler, useFieldArray, useForm } from "react-hook-form";
 
 interface ProfileFormType {
   initialData: any | null;
@@ -238,13 +242,13 @@ export const CreateProfileOne: React.FC<ProfileFormType> = ({
       <Form {...form}>
         <form
           onSubmit={form.handleSubmit(processForm)}
-          className="space-y-8 w-full"
+          className="w-full space-y-8"
         >
           <div
             className={cn(
               currentStep === 1
-                ? "md:inline-block w-full"
-                : "md:grid md:grid-cols-3 gap-8",
+                ? "w-full md:inline-block"
+                : "gap-8 md:grid md:grid-cols-3",
             )}
           >
             {currentStep === 0 && (
@@ -398,7 +402,7 @@ export const CreateProfileOne: React.FC<ProfileFormType> = ({
                     <AccordionItem value="item-1">
                       <AccordionTrigger
                         className={cn(
-                          "[&[data-state=closed]>button]:hidden [&[data-state=open]>.alert]:hidden relative !no-underline",
+                          "relative !no-underline [&[data-state=closed]>button]:hidden [&[data-state=open]>.alert]:hidden",
                           errors?.jobs?.[index] && "text-red-700",
                         )}
                       >
@@ -413,7 +417,7 @@ export const CreateProfileOne: React.FC<ProfileFormType> = ({
                           <Trash2Icon className="h-4 w-4 " />
                         </Button>
                         {errors?.jobs?.[index] && (
-                          <span className="absolute alert right-8">
+                          <span className="alert absolute right-8">
                             <AlertTriangleIcon className="h-4 w-4   text-red-700" />
                           </span>
                         )}
@@ -421,7 +425,7 @@ export const CreateProfileOne: React.FC<ProfileFormType> = ({
                       <AccordionContent>
                         <div
                           className={cn(
-                            "md:grid md:grid-cols-3 gap-8 border p-4 rounded-md relative mb-4",
+                            "relative mb-4 gap-8 rounded-md border p-4 md:grid md:grid-cols-3",
                           )}
                         >
                           <FormField
@@ -565,7 +569,7 @@ export const CreateProfileOne: React.FC<ProfileFormType> = ({
                   </Accordion>
                 ))}
 
-                <div className="flex justify-center mt-4">
+                <div className="mt-4 flex justify-center">
                   <Button
                     type="button"
                     className="flex justify-center"

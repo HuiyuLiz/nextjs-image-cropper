@@ -1,7 +1,10 @@
-import { cn } from "@/lib/utils";
-import { ChevronRightIcon } from "@radix-ui/react-icons";
 import Link from "next/link";
+
 import React from "react";
+
+import { ChevronRightIcon } from "@radix-ui/react-icons";
+
+import { cn } from "@/lib/utils";
 
 type BreadCrumbType = {
   title: string;
@@ -29,7 +32,7 @@ export default function BreadCrumb({ items }: BreadCrumbPropsType) {
             className={cn(
               "font-medium",
               index === items.length - 1
-                ? "text-foreground pointer-events-none"
+                ? "pointer-events-none text-foreground"
                 : "text-muted-foreground",
             )}
           >

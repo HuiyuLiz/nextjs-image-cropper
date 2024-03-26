@@ -1,6 +1,7 @@
+import type { Metadata } from "next";
+
 import Header from "@/components/layout/header";
 import Sidebar from "@/components/layout/sidebar";
-import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Next Shadcn Dashboard Starter",
