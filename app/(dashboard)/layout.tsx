@@ -4,8 +4,8 @@ import Header from "@/components/layout/header";
 import Sidebar from "@/components/layout/sidebar";
 
 export const metadata: Metadata = {
-  title: "Next Shadcn Dashboard Starter",
-  description: "Basic dashboard with Next.js and Shadcn",
+  title: process.env.NEXT_PUBLIC_META_TITLE,
+  description: process.env.NEXT_PUBLIC_META_DESCRIPTION,
 };
 
 export default function DashboardLayout({
