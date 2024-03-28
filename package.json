@@ -10,7 +10,8 @@
     "commit": "git-cz",
     "lint": "next lint",
     "lint:fix": "next lint --fix",
-    "prettier": "prettier --write */**/*.{js,jsx,json,ts,tsx,scss,css,md}"
+    "prettier": "prettier --write */**/*.{js,jsx,json,ts,tsx,scss,css,md}",
+    "ngrok": "ngrok http 3000"
   },
   "lint-staged": {
     "*/**/*.{js,jsx,ts,tsx}": [
@@ -69,6 +70,7 @@
     "eslint": "8.48.0",
     "eslint-config-next": "^14.0.1",
     "lucide-react": "^0.291.0",
+    "mongoose": "^8.2.3",
     "next": "^14.0.1",
     "next-auth": "^4.24.4",
     "next-themes": "^0.2.1",
@@ -80,6 +82,7 @@
     "react-hook-form": "^7.47.0",
     "recharts": "^2.9.2",
     "sharp": "^0.32.5",
+    "svix": "^1.21.0",
     "tailwind-merge": "^1.14.0",
     "tailwindcss": "^3.4.0",
     "tailwindcss-animate": "^1.0.7",
