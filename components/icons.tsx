@@ -10,6 +10,7 @@ import {
   File,
   FileText,
   HelpCircle,
+  Home,
   Image,
   Laptop,
   LayoutDashboardIcon,
@@ -21,6 +22,8 @@ import {
   MoreVertical,
   Pizza,
   Plus,
+  RefreshCcw,
+  Scaling,
   Settings,
   SunMedium,
   Trash,
@@ -28,12 +31,16 @@ import {
   User,
   User2Icon,
   UserX2Icon,
+  Wand2,
   X,
 } from "lucide-react";
 
 export type Icon = LucideIcon;
 
 export const Icons = {
+  backgroundRemove: Wand2,
+  home: Home,
+  scaling: Scaling,
   dashboard: LayoutDashboardIcon,
   logo: Command,
   login: LogIn,
@@ -60,6 +67,7 @@ export const Icons = {
   sun: SunMedium,
   moon: Moon,
   laptop: Laptop,
+  loading: RefreshCcw,
   gitHub: ({ ...props }: LucideProps) => (
     <svg
       aria-hidden="true"

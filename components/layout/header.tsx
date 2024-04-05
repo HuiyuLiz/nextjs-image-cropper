@@ -3,7 +3,6 @@ import Link from "next/link";
 
 import { SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
 
-import ThemeToggle from "@/components/layout/ThemeToggle/theme-toggle";
 import { cn } from "@/lib/utils";
 
 import { Button } from "../ui/button";
@@ -54,7 +53,6 @@ export default function Header() {
               <Link href="/sign-in">Sign In</Link>
             </Button>
           </SignedOut>
-          <ThemeToggle />
         </div>
       </nav>
     </div>

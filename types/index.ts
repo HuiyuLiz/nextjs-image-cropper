@@ -1,4 +1,5 @@
 import { Icons } from "@/components/icons";
+import { aspectRatioOptions } from "@/constants/data";
 
 export interface NavItem {
   title: string;
@@ -46,4 +47,68 @@ export type UpdateUserParams = {
   lastName: string;
   username: string;
   photo: string;
+};
+
+export type AspectRatioKey = keyof typeof aspectRatioOptions;
+
+export type Transformations = {
+  restore?: boolean;
+  fillBackground?: boolean;
+  remove?: {
+    prompt: string;
+    removeShadow?: boolean;
+    multiple?: boolean;
+  };
+  recolor?: {
+    prompt?: string;
+    to: string;
+    multiple?: boolean;
+  };
+  removeBackground?: boolean;
+};
+
+export type TransformationTypes = {
+  [key: string]: {
+    type: string;
+    title: string;
+    subTitle: string;
+    config: any;
+    icon: string;
+  };
+};
+
+// image params
+export type AddImageParams = {
+  image: {
+    title: string;
+    publicId: string;
+    transformationType: string;
+    width: number;
+    height: number;
+    config: any;
+    secureURL: string;
+    transformationURL: string;
+    aspectRatio: string | undefined;
+  };
+  userId: string;
+  path: string;
+};
+
+export type UpdateImageParams = {
+  image: {
+    _id: string;
+    title: string;
+    publicId: string;
+    transformationType: string;
+    width: number;
+    height: number;
+    config: any;
+    secureURL: string;
+    transformationURL: string;
+    aspectRatio: string | undefined;
+    prompt: string | undefined;
+    color: string | undefined;
+  };
+  userId: string;
+  path: string;
 };

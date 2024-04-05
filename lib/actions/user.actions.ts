@@ -27,9 +27,9 @@ export async function getUserById(userId: string) {
   try {
     await connectToDatabase();
 
-    const user = await User.findOne({ userId });
+    const user = await User.findOne({ clerkId: userId });
 
-    if (!user) throw new Error("Failed to find user.");
+    if (!user) throw new Error("User not found.");
 
     return JSON.parse(JSON.stringify(user));
   } catch (error: unknown) {
@@ -66,6 +66,26 @@ export async function deleteUser(clerkId: string) {
     revalidatePath("/");
 
     return deletedUser ? JSON.parse(JSON.stringify(deletedUser)) : null;
+  } catch (error: unknown) {
+    handleError(error);
+  }
+}
+
+// use credits
+
+export async function updateCredits(userId: string, creditFee: number) {
+  try {
+    await connectToDatabase();
+
+    const updatedUserCredits = await User.findOneAndUpdate(
+      { _id: userId },
+      { $inc: { creditBalance: creditFee } },
+      { new: true },
+    );
+
+    if (!updatedUserCredits) throw new Error("Unable to update user credits.");
+
+    return JSON.parse(JSON.stringify(updatedUserCredits));
   } catch (error: unknown) {
     handleError(error);
   }

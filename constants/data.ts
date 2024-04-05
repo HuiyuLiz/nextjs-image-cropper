@@ -1,4 +1,4 @@
-import { NavItem } from "@/types";
+import { NavItem, TransformationTypes } from "@/types";
 
 export type User = {
   id: number;
@@ -112,22 +112,24 @@ export type Employee = {
 
 export const navItems: NavItem[] = [
   {
-    title: "Dashboard",
+    title: "Home",
     href: "/",
-    icon: "dashboard",
-    label: "Dashboard",
+    icon: "home",
+    label: "home",
   },
   {
-    title: "User",
-    href: "/user",
-    icon: "user",
-    label: "user",
+    title: "Generative Fill",
+    href: "/image-transformations/create/fill",
+    icon: "scaling",
+    label: "generative-fill",
+    description: "Extend an image's proportions with AI outpainting.",
   },
   {
-    title: "Employee",
-    href: "/employee",
-    icon: "employee",
-    label: "employee",
+    title: "Background Remove",
+    href: "/image-transformations/create/removeBackground",
+    icon: "backgroundRemove",
+    label: "background-remove",
+    description: "Remove background from an image.",
   },
   {
     title: "Profile",
@@ -135,10 +137,42 @@ export const navItems: NavItem[] = [
     icon: "profile",
     label: "profile",
   },
-  // {
-  //   title: "Login",
-  //   href: "/",
-  //   icon: "login",
-  //   label: "login",
-  // },
 ];
+
+export const aspectRatioOptions = {
+  "1:1": {
+    aspectRatio: "1:1",
+    label: "Square (1:1)",
+    width: 1000,
+    height: 1000,
+  },
+  "3:4": {
+    aspectRatio: "3:4",
+    label: "Standard Portrait (3:4)",
+    width: 1000,
+    height: 1334,
+  },
+  "9:16": {
+    aspectRatio: "9:16",
+    label: "Phone Portrait (9:16)",
+    width: 1000,
+    height: 1778,
+  },
+};
+
+export const transformationTypes: TransformationTypes = {
+  removeBackground: {
+    type: "removeBackground",
+    title: "Background Remove",
+    subTitle: "Removes the background of the image with AI.",
+    config: { removeBackground: true },
+    icon: "camera.svg",
+  },
+  fill: {
+    type: "fill",
+    title: "Generative Fill",
+    subTitle: "Extend an image's proportions with AI outpainting.",
+    config: { fillBackground: true },
+    icon: "stars.svg",
+  },
+};
