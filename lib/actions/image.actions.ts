@@ -16,7 +16,7 @@ const populateUser = (query: any) =>
   query.populate({
     path: "author",
     model: User,
-    select: "_id firstName lastName clerkId",
+    select: "_id firstName lastName clerkId username",
   });
 
 // ADD IMAGE
@@ -116,7 +116,7 @@ export async function getAllImages({
       secure: true,
     });
 
-    let expression = "folder=imaginify";
+    let expression = "folder=image_cropper";
 
     if (searchQuery) {
       expression += ` AND ${searchQuery}`;

@@ -63,7 +63,7 @@ export default function ImageUpload({
             sizes={"(max-width: 767px) 100vw, 50vw"}
             alt="image"
             placeholder={dataUrl as PlaceholderValue}
-            className="min-h-72 w-full rounded-[10px] border border-dashed bg-accent/50 object-cover p-2"
+            className="image-container"
           />
         </div>
       )}
@@ -82,7 +82,7 @@ export default function ImageUpload({
               className={
                 publicId
                   ? ""
-                  : "flex h-fit  min-h-72  w-full cursor-pointer items-center justify-center rounded-[10px] border border-dashed bg-accent/50 object-cover p-2 lg:max-h-80"
+                  : "image-container flex items-center justify-center"
               }
               onClick={() => open()}
             >

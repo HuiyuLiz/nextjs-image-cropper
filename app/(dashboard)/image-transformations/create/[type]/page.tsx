@@ -16,6 +16,8 @@ export default async function Page({ params }: { params: { type: string } }) {
 
   const user = await getUserById(userId);
 
+  if (!user) redirect("/");
+
   const title = transformationTypes[params.type].title;
   const description = transformationTypes[params.type].subTitle as string;
 
@@ -29,8 +31,6 @@ export default async function Page({ params }: { params: { type: string } }) {
     <>
       <ScrollArea className="h-full">
         <div className="flex-1 space-y-4  p-4 pt-6 md:p-8">
-          {user.creditBalance}
-
           <BreadCrumb items={breadcrumbItems} />
           <Heading title={title} description={description} />
           <TransformationForm

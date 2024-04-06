@@ -1,6 +1,7 @@
 import { Schema, model, models } from "mongoose";
 
 export interface Image {
+  _id?: string;
   title: string;
   transformationType: string;
   publicId: string;

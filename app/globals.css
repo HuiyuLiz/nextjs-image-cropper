@@ -98,3 +98,7 @@
     transform: rotate(360deg);
   }
 }
+
+.image-container {
+  @apply h-fit min-h-72 w-full rounded-[10px] border border-dashed bg-accent/20 object-cover p-2;
+}

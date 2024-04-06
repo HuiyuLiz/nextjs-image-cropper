@@ -7,18 +7,21 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
-export function handleError(error: unknown) {
-  if (typeof error === "string") {
-    throw new Error(`Error: ${error}`);
-  } else if (error instanceof Error) {
+export const handleError = (error: unknown) => {
+  if (error instanceof Error) {
+    // This is a native JavaScript error (e.g., TypeError, RangeError)
+    console.error(error.message);
     throw new Error(`Error: ${error.message}`);
+  } else if (typeof error === "string") {
+    // This is a string error message
+    console.error(error);
+    throw new Error(`Error: ${error}`);
   } else {
     // This is an unknown type of error
     console.error(error);
     throw new Error(`Unknown error: ${JSON.stringify(error)}`);
   }
-}
-
+};
 // Display Placeholder While Image is Loading
 const shimmer = (w: number, h: number) => `
   <svg width="${w}" height="${h}" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">

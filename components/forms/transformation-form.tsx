@@ -181,7 +181,7 @@ export const TransformationForm: React.FC<TransformationFormProps> = ({
   }, [image, transformationType.config, type]);
 
   useEffect(() => {
-    if (creditBalance < 0) {
+    if (creditBalance <= 0) {
       setOpen(true);
     }
   }, [creditBalance]);
@@ -281,7 +281,7 @@ export const TransformationForm: React.FC<TransformationFormProps> = ({
             disabled={isTransforming || newTransformation === null}
             onClick={handleTransformImage}
           >
-            {isTransforming ? "Transforming..." : "Transform"}
+            {isTransforming ? "Transforming" : "Transform"}
           </Button>
           <Button
             variant={"outline"}
