@@ -11,6 +11,8 @@ import { Icons } from "@/components/icons";
 import { cn } from "@/lib/utils";
 import { NavItem } from "@/types";
 
+import { Button } from "./ui/button";
+
 interface DashboardNavProps {
   items: NavItem[];
   setOpen?: Dispatch<SetStateAction<boolean>>;
@@ -76,6 +78,9 @@ export function DashboardNav({ items, setOpen }: DashboardNavProps) {
             )
           );
         })}
+        <Button className="mt-auto">
+          <Link href="/credits">Upgrade to plus</Link>
+        </Button>
       </SignedIn>
     </nav>
   );

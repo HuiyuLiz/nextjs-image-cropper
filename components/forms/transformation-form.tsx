@@ -64,7 +64,6 @@ export const TransformationForm: React.FC<TransformationFormProps> = ({
   config,
 }) => {
   const transformationType = transformationTypes[type];
-  const [loading, setLoading] = useState(false);
   const [open, setOpen] = useState(false);
   const [image, setImage] = useState(initialData);
   const [newTransformation, setNewTransformation] =

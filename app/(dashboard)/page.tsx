@@ -1,5 +1,4 @@
 import ImageCard from "@/components/shared/image-card";
-import { Button } from "@/components/ui/button";
 import { Heading } from "@/components/ui/heading";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Separator } from "@/components/ui/separator";

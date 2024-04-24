@@ -188,3 +188,18 @@ export async function getUserImages({
     handleError(error);
   }
 }
+
+// GET IMAGES BY USER
+export async function getUserAllImages({ userId }: { userId: string }) {
+  try {
+    await connectToDatabase();
+
+    const images = await populateUser(Image.find({ author: userId }));
+
+    return {
+      data: JSON.parse(JSON.stringify(images)),
+    };
+  } catch (error) {
+    handleError(error);
+  }
+}

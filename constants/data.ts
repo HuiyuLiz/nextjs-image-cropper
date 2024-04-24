@@ -176,3 +176,78 @@ export const transformationTypes: TransformationTypes = {
     icon: "stars.svg",
   },
 };
+
+export const plans = [
+  {
+    _id: 1,
+    name: "Free",
+    price: 0,
+    credits: 2,
+    inclusions: [
+      {
+        label: "2 Free Credits",
+        isIncluded: true,
+      },
+      {
+        label: "Basic Access to Services",
+        isIncluded: true,
+      },
+      {
+        label: "Priority Customer Support",
+        isIncluded: false,
+      },
+      {
+        label: "Priority Updates",
+        isIncluded: false,
+      },
+    ],
+  },
+  {
+    _id: 2,
+    name: "Plus",
+    price: 5,
+    credits: 5,
+    inclusions: [
+      {
+        label: "5 Credits",
+        isIncluded: true,
+      },
+      {
+        label: "Full Access to Services",
+        isIncluded: true,
+      },
+      {
+        label: "Priority Customer Support",
+        isIncluded: true,
+      },
+      {
+        label: "Priority Updates",
+        isIncluded: false,
+      },
+    ],
+  },
+  {
+    _id: 3,
+    name: "Premium",
+    price: 10,
+    credits: 10,
+    inclusions: [
+      {
+        label: "10 Credits",
+        isIncluded: true,
+      },
+      {
+        label: "Full Access to Services",
+        isIncluded: true,
+      },
+      {
+        label: "Priority Customer Support",
+        isIncluded: true,
+      },
+      {
+        label: "Priority Updates",
+        isIncluded: true,
+      },
+    ],
+  },
+];

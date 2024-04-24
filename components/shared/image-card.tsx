@@ -22,7 +22,7 @@ export default function ImageCard({ image }: ImageProps) {
   return (
     <Link href={`/image-transformations/${image._id}`}>
       <Card className="w-full max-w-sm border-none shadow-md">
-        <div className="aspect-w-4 aspect-h-5 relative overflow-hidden rounded-[10px]">
+        <div className="aspect-w-4 aspect-h-5 relative overflow-hidden rounded-t-[10px]">
           <CldImage
             src={image.publicId}
             alt={image.title}
@@ -30,7 +30,7 @@ export default function ImageCard({ image }: ImageProps) {
             height={image.height}
             {...image.config}
             placeholder={dataUrl as PlaceholderValue}
-            className="duration-250 h-60 w-full cursor-pointer rounded-[10px] object-cover transition ease-out hover:scale-105 hover:ease-in"
+            className="duration-250 h-60 w-full cursor-pointer object-cover transition ease-out hover:scale-105 hover:ease-in"
             sizes="(max-width: 767px) 100vw, (max-width: 1279px) 50vw, 33vw"
           />
         </div>
